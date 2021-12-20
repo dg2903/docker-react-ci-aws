@@ -9,7 +9,6 @@ COPY . .
 RUN npm run build
 
 FROM nginx
-EXPOSE 80
 COPY --from=builder /app/build /usr/share/nginx/html
 
 # /usr/share/nginx/html is the default location where nginx will serve the static html
